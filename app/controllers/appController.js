@@ -6,7 +6,7 @@ var	express = require('express'),
 
 var routes = require('../node_routes');
 
-exports.init = Backbone.NodeClass.extend({
+exports.init = Backbone.Router.extend({
 
 	initialize: function() {
 
