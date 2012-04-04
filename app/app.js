@@ -1,37 +1,13 @@
 
-/**
- * Module dependencies.
- */
+var Backbone = require('backbone'),
+	_ = require('underscore'),
+	controllers = require('./controllers');
 
-var express = require('express'),
-	backbone = require('backbone'),
-	routes = require('./node_routes');
+global.baseDirectory = __dirname;
 
-var app = module.exports = express.createServer();
+_.extend(global, Backbone.Events);
 
-// Configuration
+var appController = new controllers.AppController.init();
 
-app.configure(function(){
-	app.set('views', __dirname + '/ejs_views');
-	app.set('view engine', 'ejs');
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(app.router);
-	app.use(express.static(__dirname + '/public'));
-});
-
-app.configure('development', function(){
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
-
-app.configure('production', function(){
-	app.use(express.errorHandler());
-});
-
-// Routes
-
-app.get('/', routes.index);
-
-app.listen(3000, function(){
-	console.log("Express  server listening on port %d in %s mode", app.address().port, app.settings.env);
-});
+// Example global trigger.
+// global.trigger('foo');
