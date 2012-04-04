@@ -1,2 +1,2 @@
 
-exports.AppController = require("./appController.js");
+exports.AppController = require("./appController");
