@@ -5,14 +5,14 @@
 
 var express = require('express'),
 	backbone = require('backbone'),
-	routes = require('./routes');
+	routes = require('./node_routes');
 
 var app = module.exports = express.createServer();
 
 // Configuration
 
 app.configure(function(){
-	app.set('views', __dirname + '/views');
+	app.set('views', __dirname + '/ejs_views');
 	app.set('view engine', 'ejs');
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
@@ -33,5 +33,5 @@ app.configure('production', function(){
 app.get('/', routes.index);
 
 app.listen(3000, function(){
-	console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+	console.log("Express  server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
