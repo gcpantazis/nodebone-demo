@@ -6,5 +6,6 @@ var Backbone = require('backbone'),
 global.baseDirectory = __dirname;
 _.extend(global, Backbone.Events);
 
-// Initialize Controller, start app.
+// Initialize Controllers, start app.
+var routeController = new controllers.RouteController.init();
 var appController = new controllers.AppController.init();
