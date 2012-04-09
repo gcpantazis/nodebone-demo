@@ -4,8 +4,6 @@ var	express = require('express'),
 	BackboneNode = require('backbone_node'),
 	_ = require('underscore');
 
-var routes = require('../node_routes');
-
 exports.init = Backbone.Router.extend({
 
 	initialize: function() {
@@ -48,7 +46,9 @@ exports.init = Backbone.Router.extend({
 
 		var view = this;
 
-		view.app.get('/', routes.index);
+		view.app.get('/', function(req, res){
+			res.render('index', { title: 'Express' })
+		});
 	},
 
 	startListen: function() {
