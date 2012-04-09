@@ -15,6 +15,23 @@ exports.init = Backbone.Router.extend({
 		this.startListen();
 	},
 
+	setupRoutes: function() {
+
+		var view = this;
+
+		// This should be done in a method similar to Backbone's routes;
+		// The modeling is the same, so should be a good translation.
+
+		var indexView = new views.IndexView.init({
+			route: '/'
+		});
+
+		var exampleView = new views.ExampleView.init({
+			route: '/example/:id'
+		});
+
+	},
+
 	setupApp: function() {
 
 		var view = this;
@@ -37,23 +54,6 @@ exports.init = Backbone.Router.extend({
 		view.app.configure('production', function(){
 			view.app.use(express.errorHandler());
 		});
-	},
-
-	setupRoutes: function() {
-
-		var view = this;
-
-		// This should be done in a method similar to Backbone's routes;
-		// The modeling is the same, so should be a good translation.
-
-		var indexView = new views.IndexView.init({
-			route: '/'
-		});
-
-		var exampleView = new views.ExampleView.init({
-			route: '/example/:id'
-		});
-
 	},
 
 	startListen: function() {
