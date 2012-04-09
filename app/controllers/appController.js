@@ -27,7 +27,7 @@ exports.init = Backbone.Router.extend({
 		});
 
 		var exampleView = new views.ExampleView.init({
-			route: '/example/:id'
+			route: '/test/:id'
 		});
 
 	},
