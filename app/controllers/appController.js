@@ -4,6 +4,8 @@ var	express = require('express'),
 	BackboneNode = require('backbone_node'),
 	_ = require('underscore');
 
+var views = require('../views');
+
 exports.init = Backbone.Router.extend({
 
 	initialize: function() {
@@ -11,11 +13,6 @@ exports.init = Backbone.Router.extend({
 		this.setupApp();
 		this.setupRoutes();
 		this.startListen();
-
-		// Example global listener.
-		// global.on('foo', function(){
-		// 	console.log('bar');
-		// });
 	},
 
 	setupApp: function() {
@@ -46,9 +43,17 @@ exports.init = Backbone.Router.extend({
 
 		var view = this;
 
-		view.app.get('/', function(req, res){
-			res.render('index', { title: 'Express' })
+		// This should be done in a method similar to Backbone's routes;
+		// The modeling is the same, so should be a good translation.
+
+		var indexView = new views.IndexView.init({
+			route: '/'
 		});
+
+		var exampleView = new views.ExampleView.init({
+			route: '/example/:id'
+		});
+
 	},
 
 	startListen: function() {
@@ -58,6 +63,8 @@ exports.init = Backbone.Router.extend({
 		view.app.listen(3000, function(){
 			console.log("Express  server listening on port %d in %s mode", view.app.address().port, view.app.settings.env);
 		});
+
+		global.trigger('ready:app', view.app);
 	}
 
 });

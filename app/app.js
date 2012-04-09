@@ -4,10 +4,7 @@ var Backbone = require('backbone'),
 	controllers = require('./controllers');
 
 global.baseDirectory = __dirname;
-
 _.extend(global, Backbone.Events);
 
+// Initialize Controller, start app.
 var appController = new controllers.AppController.init();
-
-// Example global trigger.
-// global.trigger('foo');
