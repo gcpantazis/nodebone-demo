@@ -1,0 +1,12 @@
+/*
+* app.css
+*
+*/
+
+body { color: #444; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+p { margin: 0 0 12px 0; }
+object { outline: medium none !important; }
+
+#memories .memory img { height: 100px; width: 100px; }

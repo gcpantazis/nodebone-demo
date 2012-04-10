@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title><%= title %></title>
-		<link rel='stylesheet' href='/stylesheets/style.css' />
-	</head>
-	<body>
+<%- partial('partials/header') %>
+
+<div id="section_main">
+	<noscript>
+		<p>Javascript is currently disabled. Please <a href="http://www.google.com/support/bin/answer.py?answer=23852" target="_blank">enable javascript</a> for the optimal experience!</p>
+	</noscript>
+	<div id="section_content">
 		<%- body %>
-	</body>
-</html>
+	</div>
+</div>
+
+<%- partial('partials/footer') %>
