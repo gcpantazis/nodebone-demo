@@ -18,10 +18,11 @@ exports.init = Backbone.View.extend({
 		app.get(view.route, function(req, res){
 
 			var model = {
+				layout: 'layouts/basic',
 				title: 'Express'
 			};
 
-			res.render('index', model);
+			res.render('sections/index', model);
 		});
 	}
 
