@@ -41,7 +41,7 @@ exports.init = Backbone.Router.extend({
 
 		var view = this;
 
-		view.app.listen(3000, function(){
+		view.app.listen(process.env.PORT || 3000, function(){
 			console.log("Express  server listening on port %d in %s mode", view.app.address().port, view.app.settings.env);
 		});
 
