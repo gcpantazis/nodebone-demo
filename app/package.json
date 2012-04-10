@@ -1,7 +1,11 @@
 {
 	"name": "NodeBackboneBoilerplateApp",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": true,
+	"engines": {
+		"node": "0.6.x",
+		"npm":  "1.1.x"
+	},
 	"dependencies": {
 		"backbone": ">= 0.9.2",
 		"backbone_node": "0.0.1",
