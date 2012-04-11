@@ -10,24 +10,17 @@ var	Backbone = require('backbone'),
 exports.init = Backbone.View.extend({
 
 	initialize: function() {
-
 		_.bindAll(this);
-		global.on('ready:app', this.setup);
 	},
 
-	setup: function(app) {
+	render: function(req, res) {
 
-		var view = this;
+		var model = {
+			layout: 'layouts/basic',
+			title: req.params.id
+		};
 
-		app.get(view.route, function(req, res){
-
-			var model = {
-				layout: 'layouts/basic',
-				title: req.params.id
-			};
-
-			res.render('sections/index', model);
-		});
+		res.render('sections/index', model);
 	}
 
 });
