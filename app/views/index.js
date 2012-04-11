@@ -1,3 +1,7 @@
+/*
+ * Views: index.js  [exports]
+ *
+ */
 
-exports.IndexView = require("./IndexView");
-exports.ExampleView = require("./ExampleView");
+exports.IndexView = require("./indexView");
+exports.ExampleView = require("./exampleView");

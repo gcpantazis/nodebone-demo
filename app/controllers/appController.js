@@ -1,3 +1,7 @@
+/*
+ * Controllers: appController.js
+ *
+ */
 
 var	express = require('express'),
 	Backbone = require('backbone'),

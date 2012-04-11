@@ -1,3 +1,7 @@
+/*
+ * Views: IndexView.js
+ *
+ */
 
 var	Backbone = require('backbone'),
 	BackboneNode = require('backbone_node'),
