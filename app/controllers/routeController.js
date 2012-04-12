@@ -3,8 +3,7 @@
  *
  */
 
-var	express = require('express'),
-	Backbone = require('backbone'),
+var	Backbone = require('backbone'),
 	BackboneNode = require('backbone_node');
 
 var views = require('../views');

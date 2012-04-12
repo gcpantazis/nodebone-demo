@@ -4,8 +4,9 @@
  */
 
 var Backbone = require('backbone'),
-	_ = require('underscore'),
-	controllers = require('./controllers');
+	_ = require('underscore');
+
+var controllers = require('./controllers');
 
 global.baseDirectory = __dirname;
 _.extend(global, Backbone.Events);
