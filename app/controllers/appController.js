@@ -5,7 +5,7 @@
 
 var	express = require('express'),
 	Backbone = require('backbone'),
-	BackboneNode = require('backbone_node');
+	NodeBackbone = require('node-backbone');
 
 var views = require('../views');
 
