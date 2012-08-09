@@ -21,7 +21,7 @@ exports.init = Backbone.Router.extend({
 
 		var view = this;
 
-		view.app = module.exports = express.createServer();
+		view.app = module.exports = express();
 
 		view.app.configure(function(){
 			view.app.set('views', global.baseDirectory + '/templates');
@@ -47,7 +47,7 @@ exports.init = Backbone.Router.extend({
 
 		// Conditional switch for process.env.PORT flag from Heroku.
 		view.app.listen(process.env.PORT || 3000, function(){
-			console.log("Express  server listening on port %d in %s mode", view.app.address().port, view.app.settings.env);
+			console.log("Express server listening in %s mode", view.app.get('env'));
 			global.trigger('ready:app', view.app);
 		});
 
