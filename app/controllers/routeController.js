@@ -23,10 +23,12 @@ exports.init = Backbone.Router.extend({
 		// The modeling is the same, so should be a good translation.
 
 		var indexView = new views.IndexView.init({
+			action: 'GET',
 			route: '/'
 		});
 
 		var exampleView = new views.ExampleView.init({
+			action: 'GET',
 			route: '/test/:id'
 		});
 	}
