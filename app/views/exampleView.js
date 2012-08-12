@@ -4,7 +4,7 @@
  */
 
 var	Backbone = require('backbone'),
-	NodeBackbone = require('node-backbone'),
+	Nodebone = require('nodebone'),
 	_ = require('underscore');
 
 exports.init = Backbone.View.extend({
